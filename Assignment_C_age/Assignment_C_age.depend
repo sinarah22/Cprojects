@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1562523829 source:c:\users\sina\desktop\prg\assignment_c_age\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
