@@ -44,7 +44,7 @@ int main()
         puts("Enter the Radius of the circle");
         scanf("%d", &Radius);
     printf("Diameter is %d\n", 2 * Radius);
-    printf("Circumference is %f\n", 2 * 3.14159 * Radius);
+    printf("Circumference is %.1f\n", 2 * 3.14159 * Radius);
     printf("Area is %f\n", 3.14159 * Radius * Radius);
         break;
         case 3:

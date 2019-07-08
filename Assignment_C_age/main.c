@@ -33,25 +33,26 @@ printf("%d %s",month,"Months and ");
 printf("%d %s",day,"Days.\n");
 printf("%s %d","Days of living till now :",(((1900+tm.tm_year-I_year)*365)+((tm.tm_mon + 1-I_mon)*30)+day));
 
-if(1900+tm.tm_year-I_year<10){
+if(1900 + tm.tm_year - I_year < 10){
     puts("\nYour Child wish i was your age!!!");
     system("COLOR A");
 }
-else if (10<1900+tm.tm_year-I_year<30){
+else if (10< 1900 + tm.tm_year - I_year &&  1900 + tm.tm_year- I_year <30){
     puts("\nYour young!!! try to enjoy it cause there is not a second time ");
     system("COLOR A");
 }
-else if(30<1900+tm.tm_year-I_year<50){
+else if(30 < 1900 + tm.tm_year - I_year && 1900 + tm.tm_year - I_year <50){
     puts("\nTry less fastfood and go on more healty diet ");
     system("COLOR B");
 }
-else if(50<1900+tm.tm_year-I_year<90){
-    puts("\nsay Hi to your grandchild!!!! ");
+else if(50< 1900+ tm.tm_year - I_year && 1900+ tm.tm_year - I_year <90){
+    puts("\nSay Hi to your grandchild!!!! ");
     system("COLOR E");
 }
- if(90<1900+tm.tm_year-I_year){
-    puts("\n DIEEEEEEEEEEEE ");
+ if(90< 1900 + tm.tm_year - I_year){
+    puts("\nBitch!!! DIEEEEEEEEEEEE@#$#%#&# ");
     system("COLOR C");
+
 }
     return 0;
 }
