@@ -5,6 +5,7 @@
 int main()
 {
     int day;
+    int month;
     int I_year;
     int I_mon;
     int I_day;
@@ -16,6 +17,11 @@ puts("Please Enter The Month Of Birth");
 scanf("%d",&I_mon);
 puts("Please Enter The day Of Birth");
 scanf("%d",&I_day);
+    month=tm.tm_mon + 1-I_mon;
+    if(month<0){
+        I_year+=1;
+        month=month+12;
+    }
     day= tm.tm_mday-I_day;
     if(day<0){
     I_mon+=1;
@@ -23,7 +29,7 @@ scanf("%d",&I_day);
     }
 printf("%s %d %s ","you are",1900+tm.tm_year-I_year,"Years old and ");
 //printf("%d-%d=%d \n",tm.tm_year+1900,I_year,1900+tm.tm_year-I_year);
-printf("%d %s",tm.tm_mon + 1-I_mon,"Months and ");
+printf("%d %s",month,"Months and ");
 printf("%d %s",day,"Days.\n");
 printf("%s %d","Days of living till now :",(((1900+tm.tm_year-I_year)*365)+((tm.tm_mon + 1-I_mon)*30)+day));
 
