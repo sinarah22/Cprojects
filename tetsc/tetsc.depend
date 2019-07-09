@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1562615723 source:c:\users\sina\desktop\prg\tetsc\main.c
+	<stdio.h>
+	<stdlib.h>
+
