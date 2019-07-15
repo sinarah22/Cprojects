@@ -41,29 +41,29 @@ int main()
 //    poinee+=1;
 //}
 //******************
-struct student student1;
-student1.id=100;
+struct student students[1];
+students[1].id=100;
 //student1.name="Sina";
 //this down code is because the code up name is a char and does not work with the code up
-strcpy( student1.name, "Sara" );
-student1.gpa; 4.0;
-student1.term= 3;
+//strcpy( students[1].name, "Sara" );
+students[1].gpa; 4.0;
+students[1].term= 3;
 
-int student[3];
+//student students[];
 for(int i=1;i<=3;i++){
 puts("type Id");
-scanf("%d",&student1.id);
+scanf("%d",&students[i].id);
 puts("type name");
-scanf("%s",&student1.name);
+scanf("%s",&students[i].name);
 puts("type gpa");
-scanf("%f",&student1.gpa);
+scanf("%f",&students[i].gpa);
 puts("type term");
-scanf("%d",&student1.term);
-printf("student %d name is : %s",i,student1.name);
-printf("\nstudent %d id is : %d",i,student1.id);
-printf("\nstudent %d name is : %.2f",i,student1.gpa);
-printf("\nstudent %d name is : %d\n",i,student1.term);
-student[i];
+scanf("%d",&students[i].term);
+printf("student %d name is : %s",i,students[i].name);
+printf("\nstudent %d id is : %d",i,students[i].id);
+printf("\nstudent %d name is : %.2f",i,students[i].gpa);
+printf("\nstudent %d name is : %d\n",i,students[i].term);
+students[i];
 
 }
    return 0;

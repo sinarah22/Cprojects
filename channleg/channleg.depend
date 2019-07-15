@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1563223153 source:c:\users\sina\desktop\prg\channleg\main.c
+	<stdio.h>
+	<stdlib.h>
+

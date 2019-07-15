@@ -4,24 +4,29 @@
 
 int main()
 {
+    //setting the values
     int day;
     int month;
     int I_year;
     int I_mon;
     int I_day;
+    //convert the time to int
     time_t t = time(NULL);
 struct tm tm = *localtime(&t);
+//ask user to input the data
 puts("Please Enter The Year Of Birth");
 scanf("%d",&I_year);
 puts("Please Enter The Month Of Birth");
 scanf("%d",&I_mon);
 puts("Please Enter The day Of Birth");
 scanf("%d",&I_day);
+//we don`t have negative value for time so we do this
     month=tm.tm_mon + 1-I_mon;
     if(month<0){
         I_year+=1;
         month=month+12;
     }
+    //we don`t have negative value for time so we do this
     day= tm.tm_mday-I_day;
     if(day<0){
     I_mon+=1;
