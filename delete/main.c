@@ -13,10 +13,17 @@ Nodeptr * prev ;
 int main()
 {
     Nodeptr * Node1 = (Nodeptr *)malloc(sizeof(Nodeptr));
+    Nodeptr * Node2 = (Nodeptr *)malloc(sizeof(Nodeptr));
+
+    start = Node1;
+    end  = Node2;
 
     Node1->data =100;
-    Node1->data =NULL;
-    Node1->data =NULL;
+    Node1->next =Node2;
+    Node1->prev =NULL;
+    Node2->data =900;
+    Node2->next =NULL;
+    Node2->prev =Node1;
 
 
 

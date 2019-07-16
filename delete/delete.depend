@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1563297049 source:c:\users\sina\desktop\prg\delete\main.c
+	<stdio.h>
+	<stdlib.h>
+
