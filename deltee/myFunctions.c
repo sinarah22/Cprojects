@@ -48,6 +48,29 @@ void printTheNodesBackwards() {
 }
 
 void addToLeft() {
+    Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
+    if(start == NULL && endNode == NULL){
+        start = currentNode;
+        endNode = currentNode;
+        printf("What is the data ? :");
+        scanf("%d",currentNode->data);
+        currentNode->next = NULL;
+        currentNode->previous =NULL;
+    }else{
+        puts("add one more node");
+        scanf("%d",currentNode->data);
+        currentNode->previous = NULL;
+        currentNode->next = start;
+        start->previous =currentNode;
+        start = currentNode;
+
+    }
+
+
+
+
+
+
 
 }
 
