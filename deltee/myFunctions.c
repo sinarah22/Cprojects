@@ -53,12 +53,12 @@ void addToLeft() {
         start = currentNode;
         endNode = currentNode;
         printf("What is the data ? :");
-        scanf("%d",currentNode->data);
+        scanf("%d",&currentNode->data);
         currentNode->next = NULL;
         currentNode->previous =NULL;
     }else{
         puts("add one more node");
-        scanf("%d",currentNode->data);
+        scanf("%d",&currentNode->data);
         currentNode->previous = NULL;
         currentNode->next = start;
         start->previous =currentNode;
