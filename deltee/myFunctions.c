@@ -21,7 +21,26 @@ Nodeptr * start;
 Nodeptr * endNode;
 
 void printTheNodes() {
-   
+    Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
+if(start ==NULL && endNode == NULL)
+    {
+    puts("No Node to print");
+
+}else{
+    Nodeptr * currentPtr = start;
+    while(currentPtr != NULL){
+
+
+
+    printf("%d ->",currentPtr->data);
+    currentPtr= currentPtr->next;
+
+    }
+    printf("NULL\n");
+    puts("------------");
+}
+    puts("");
+
 }
 
 void printTheNodesBackwards() {
@@ -33,7 +52,25 @@ void addToLeft() {
 }
 
 void addToRight(){
+Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
 
+    if(start ==NULL && endNode == NULL){
+        start = currentNode;
+        endNode = currentNode;
+        printf("what is the data? :");
+        scanf("%d",&currentNode->data);
+        currentNode->next = NULL;
+        currentNode->previous = NULL;
+    }else{
+        puts("add one more node");
+        printf("what is the data? :");
+        scanf("%d",&currentNode->data);
+        currentNode->previous = start;
+        currentNode->next = NULL;
+        endNode->next =currentNode;
+        endNode = currentNode;
+
+    }
 }
 
 void addMiddleAfter() {
