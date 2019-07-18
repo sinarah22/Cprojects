@@ -7,6 +7,7 @@
 //
 
 #include "myFunctions.h"
+#include <stdlib.h>
 
 typedef struct Node Nodeptr;
 
@@ -44,6 +45,25 @@ if(start ==NULL && endNode == NULL)
 }
 
 void printTheNodesBackwards() {
+    Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
+if(start ==NULL && endNode == NULL)
+    {
+    puts("No Node to print");
+
+}else{
+    Nodeptr * currentPtr = endNode;
+    while(currentPtr != NULL){
+
+
+
+        printf("%d ->",currentPtr->data);
+        currentPtr= currentPtr->previous;
+
+    }
+    printf("NULL\n");
+    puts("------------");
+}
+    puts("");
 
 }
 
@@ -97,12 +117,47 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
 }
 
 void addMiddleAfter() {
+    Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
+    int a;
+    puts("serach :");
+    scanf("%d",&a);
+if(a == currentNode->data){
 
+Nodeptr * currentPtr = start;
+    while(currentPtr != NULL){
+
+
+
+puts("hurfheourhguih;g;urshwguwtgwrhu;wghoitghw");
+    //printf("%d ->",currentPtr->data);
+    currentPtr= currentPtr->next;
+
+    }
+
+}
 }
 
 
 void addMiddleBefore() {
 
+}
+void DeleteNodeFromStart(void){
+
+
+if( start == endNode){
+free(start);
+start= NULL;
+endNode = NULL;
+
+  puts("cant");
+}else{
+    Nodeptr * temPtr;
+temPtr = start->next;
+temPtr->previous = NULL;
+free(start);
+start = temPtr;
+  printTheNodes();
+}
 }
 
 
