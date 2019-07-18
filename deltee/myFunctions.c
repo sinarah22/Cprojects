@@ -23,46 +23,46 @@ Nodeptr * endNode;
 
 void printTheNodes() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-if(start ==NULL && endNode == NULL)
-    {
-    puts("No Node to print");
+    if(start ==NULL && endNode == NULL)
+        {
+        puts("No Node to print");
 
-}else{
-    Nodeptr * currentPtr = start;
-    while(currentPtr != NULL){
+    }else{
+        Nodeptr * currentPtr = start;
+        while(currentPtr != NULL){
 
 
 
-    printf("%d ->",currentPtr->data);
-    currentPtr= currentPtr->next;
+        printf("%d ->",currentPtr->data);
+        currentPtr= currentPtr->next;
 
+        }
+        printf("NULL\n");
+        puts("------------");
     }
-    printf("NULL\n");
-    puts("------------");
-}
     puts("");
 
 }
 
 void printTheNodesBackwards() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-if(start ==NULL && endNode == NULL)
-    {
-    puts("No Node to print");
+    if(start ==NULL && endNode == NULL)
+        {
+        puts("No Node to print");
 
-}else{
-    Nodeptr * currentPtr = endNode;
-    while(currentPtr != NULL){
+    }else{
+        Nodeptr * currentPtr = endNode;
+        while(currentPtr != NULL){
 
 
 
-        printf("%d ->",currentPtr->data);
-        currentPtr= currentPtr->previous;
+            printf("%d ->",currentPtr->data);
+            currentPtr= currentPtr->previous;
 
+        }
+        printf("NULL\n");
+        puts("------------");
     }
-    printf("NULL\n");
-    puts("------------");
-}
     puts("");
 
 }
@@ -117,24 +117,45 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
 }
 
 void addMiddleAfter() {
-    Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-    int a;
-    puts("serach :");
-    scanf("%d",&a);
-if(a == currentNode->data){
+    if(start ==NULL && endNode==NULL){
+        printTheNodes();
 
-Nodeptr * currentPtr = start;
-    while(currentPtr != NULL){
+        return;
+    }
+    int data;
+    puts("which data you are looking for?");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = start;
 
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                if(current == endNode){
+                    addToRight();
+                    break;
+                }
+                Nodeptr * newNode =(Nodeptr *)malloc(sizeof(Nodeptr));
+                printf("what is the data");
+                scanf("%d",&newNode->data);
+                Nodeptr * currentNext = current->next;
+                current->next = newNode;
+                newNode->previous = current;
+                newNode->next = currentNext;
+                currentNext->previous = newNode;
+                printTheNodes();
+                return;
 
-
-puts("hurfheourhguih;g;urshwguwtgwrhu;wghoitghw");
-    //printf("%d ->",currentPtr->data);
-    currentPtr= currentPtr->next;
+            }
+        current = current->next;
 
     }
+    if(start==endNode){
 
-}
+        addToRight();
+        return;
+    }
+puts("check your data it`s not in the list");
 }
 
 
@@ -144,20 +165,21 @@ void addMiddleBefore() {
 void DeleteNodeFromStart(void){
 
 
-if( start == endNode){
-free(start);
-start= NULL;
-endNode = NULL;
+    if( start == endNode)
+        {
+        free(start);
+        start= NULL;
+        endNode = NULL;
 
-  puts("cant");
-}else{
-    Nodeptr * temPtr;
-temPtr = start->next;
-temPtr->previous = NULL;
-free(start);
-start = temPtr;
-  printTheNodes();
-}
+        puts("cant delete the node!!");
+    }else{
+        Nodeptr * temPtr;
+        temPtr = start->next;
+        temPtr->previous = NULL;
+        free(start);
+        start = temPtr;
+        printTheNodes();
+        }
 }
 
 
