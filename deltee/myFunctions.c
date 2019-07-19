@@ -160,8 +160,51 @@ puts("check your data it`s not in the list");
 
 
 void addMiddleBefore() {
+ if(start ==NULL && endNode==NULL){
+        printTheNodes();
 
+        return;
+    }
+    int data;
+    puts("which data you are looking for? ");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = start;
+
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                if(current == endNode){
+                    addToLeft();
+                    break;
+                }
+                Nodeptr * newNode =(Nodeptr *)malloc(sizeof(Nodeptr));
+                printf("what is the data ? ");
+                scanf("%d",&newNode->data);
+                Nodeptr * currentPre = current->previous;
+                current->previous = newNode;
+                newNode->next = current;
+                newNode->previous = currentPre;
+                currentPre->next = newNode;
+                printTheNodes();
+                return;
+
+            }
+        current = current->next;
+
+    }
+    if(start==endNode){
+
+        addToLeft();
+        return;
+    }
+puts("check your data it`s not in the list");
 }
+
+
+
+
+
 void DeleteNodeFromStart(void){
 
 
