@@ -224,6 +224,15 @@ void DeleteNodeFromStart(void){
         printTheNodes();
         }
 }
+void DeleteAll(){
+start=NULL;
+endNode=NULL;
+puts("All Nodes Deleted Successfully");
+
+}
+void DeleteAny(){
+
+}
 
 
 void menu() {

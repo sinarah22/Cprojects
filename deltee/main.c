@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     do
     {
 
-        printf("1 - add (left) | 2- add (right) | 3 - add Middle After |  5 - print | 6 - print backward | 7 - delete node from start ");
+        printf("1 - add (left) | 2- add (right) | 3 - add Middle After | 4 - add Middle Before |  5 - print | 6 - print backward | 7 - delete node from start | 8 - Delete All | 9 - Delete Any | ");
         puts("99 - extend the menu | ");
         scanf("%d", &choice);
 
@@ -60,8 +60,13 @@ int main(int argc, char *argv[])
             case 0:
                 break;
                 case 7:
-
                DeleteNodeFromStart();
+                break;
+            case 8 :
+                DeleteAll();
+                break;
+            case 9 :
+                DeleteAny();
                 break;
             default:
                 printf("please enter a valid number\n\n");
