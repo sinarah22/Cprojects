@@ -277,7 +277,24 @@ void DeleteAny(){
 
 
 }
+printOdd(){
+      Nodeptr * current = start;
 
+ while(current != NULL){
+        if(current->data %2 != 0){
+           printf("%d -->",current->data);;
+
+        }
+
+
+     current = current->next;
+     if(start==endNode){
+        return;
+     }
+ }
+puts("NUll");
+
+}
 
 void menu() {
     puts("");
