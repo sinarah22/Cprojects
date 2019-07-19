@@ -108,7 +108,7 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
         puts("add one more node");
         printf("what is the data? :");
         scanf("%d",&currentNode->data);
-        currentNode->previous = start;
+        currentNode->previous = endNode;
         currentNode->next = NULL;
         endNode->next =currentNode;
         endNode = currentNode;
@@ -231,6 +231,50 @@ puts("All Nodes Deleted Successfully");
 
 }
 void DeleteAny(){
+
+    if(start ==NULL && endNode==NULL){
+        puts("No Nodes Too Delete");
+        return;
+    }
+
+
+    int data;
+    puts("Which Node You Are Going To Delete?");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = start;
+
+    if(start == endNode){
+
+        DeleteAll();
+        printTheNodes();
+        return;
+    }
+
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                if(current == endNode){
+                    Nodeptr * temPtr;
+                    temPtr = endNode->previous;
+                    temPtr->next = NULL;
+                    free(endNode);
+                    endNode = temPtr;
+                    printTheNodes();
+                    break;
+                }
+                current = NULL;
+
+                free(current);
+
+
+                return;
+
+            }
+        current = current->next;
+
+    }
+
 
 }
 
