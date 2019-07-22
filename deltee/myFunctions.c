@@ -318,6 +318,37 @@ ReplaceIt(){
 puts("sorry it does`n exist in the list");
 
 }
+SortTheList(){
+ Nodeptr * temPtr;
+  Nodeptr * current = StartNode;
+  Nodeptr * secondN = current->next;
+
+while(current != NULL){
+        temPtr = secondN;
+        if(temPtr->data<current->data){
+
+            secondN->data = current->data;
+            current->data = temPtr->data;
+        }
+                printTheNodes();
+
+                return;
+        current = current->next;
+
+    }
+
+
+}
+SizeOfN(){
+    int count = 0;
+    Nodeptr * current = StartNode;
+while(current!=endNode){
+ current = current->next;
+ count=count+1;
+
+}
+ printf("The size of This ,is : %d \n",count+1);
+}
 
 void menu() {
     puts("");

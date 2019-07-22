@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     {
 
         printf("1 - add (left) | 2- add (right) | 3 - add Middle After | 4 - add Middle Before |  5 - print | 6 - print backward | 7 - delete node from StartNode | 8 - Delete All | 9 - Delete Any | 11 - Odd Numbers | 12 - Replace A Number | ");
-        puts("99 - extend the menu | ");
+        puts(" 13 - Sort the list | 99 - extend the menu | ");
         scanf("%d", &choice);
 
         switch (choice)
@@ -73,6 +73,12 @@ int main(int argc, char *argv[])
                 break;
             case 12 :
                 ReplaceIt();
+                break;
+            case 13 :
+                SortTheList();
+                break;
+            case 14 :
+                SizeOfN();
                 break;
             default:
                 printf("please enter a valid number\n\n");
