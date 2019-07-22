@@ -318,36 +318,41 @@ ReplaceIt(){
 puts("sorry it does`n exist in the list");
 
 }
-SortTheList(){
- Nodeptr * temPtr;
-  Nodeptr * current = StartNode;
-  Nodeptr * secondN = current->next;
+void SortTheList(){
+    Nodeptr * current = StartNode;
+    Nodeptr * secondN = current->next;
+    Nodeptr * temPtr;
 
-while(current != NULL){
-        temPtr = secondN;
-        if(temPtr->data<current->data){
+    while(current != NULL){
+            for(int i=0;i<7;i++){
+                temPtr = secondN;
+                if(temPtr->data<current->data){
 
-            secondN->data = current->data;
-            current->data = temPtr->data;
-        }
-                printTheNodes();
+                    secondN->data = current->data;
+                    current->data = temPtr->data;
 
-                return;
-        current = current->next;
+                }
+                    printTheNodes();
 
+                    //return;
+                    current = current->next;
+
+            }
     }
 
 
 }
-SizeOfN(){
+int SizeOfN(){
     int count = 0;
     Nodeptr * current = StartNode;
-while(current!=endNode){
- current = current->next;
- count=count+1;
+    while(current!=NULL){
+        current = current->next;
+        count=count+1;
 
-}
- printf("The size of This ,is : %d \n",count+1);
+
+    }
+    //printf("The size of This ,is : %d \n",count);
+    return count;
 }
 
 void menu() {
