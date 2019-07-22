@@ -18,17 +18,17 @@ typedef struct Node
     Nodeptr* previous;
 } Nodeptr;
 
-Nodeptr * start;
+Nodeptr * StartNode;
 Nodeptr * endNode;
 
 void printTheNodes() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-    if(start ==NULL && endNode == NULL)
+    if(StartNode ==NULL && endNode == NULL)
         {
         puts("No Node to print");
 
     }else{
-        Nodeptr * currentPtr = start;
+        Nodeptr * currentPtr = StartNode;
         while(currentPtr != NULL){
 
 
@@ -46,7 +46,7 @@ void printTheNodes() {
 
 void printTheNodesBackwards() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-    if(start ==NULL && endNode == NULL)
+    if(StartNode ==NULL && endNode == NULL)
         {
         puts("No Node to print");
 
@@ -69,8 +69,8 @@ void printTheNodesBackwards() {
 
 void addToLeft() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
-    if(start == NULL && endNode == NULL){
-        start = currentNode;
+    if(StartNode == NULL && endNode == NULL){
+        StartNode = currentNode;
         endNode = currentNode;
         printf("What is the data ? :");
         scanf("%d",&currentNode->data);
@@ -80,9 +80,9 @@ void addToLeft() {
         puts("add one more node");
         scanf("%d",&currentNode->data);
         currentNode->previous = NULL;
-        currentNode->next = start;
-        start->previous =currentNode;
-        start = currentNode;
+        currentNode->next = StartNode;
+        StartNode->previous =currentNode;
+        StartNode = currentNode;
 
     }
 
@@ -97,8 +97,8 @@ void addToLeft() {
 void addToRight(){
 Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
 
-    if(start ==NULL && endNode == NULL){
-        start = currentNode;
+    if(StartNode ==NULL && endNode == NULL){
+        StartNode = currentNode;
         endNode = currentNode;
         printf("what is the data? :");
         scanf("%d",&currentNode->data);
@@ -117,7 +117,7 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
 }
 
 void addMiddleAfter() {
-    if(start ==NULL && endNode==NULL){
+    if(StartNode ==NULL && endNode==NULL){
         printTheNodes();
 
         return;
@@ -126,7 +126,7 @@ void addMiddleAfter() {
     puts("which data you are looking for?");
     scanf("%d",&data);
     //search
-    Nodeptr * current = start;
+    Nodeptr * current = StartNode;
 
     while(current != NULL){
             if(data == current->data){
@@ -150,7 +150,7 @@ void addMiddleAfter() {
         current = current->next;
 
     }
-    if(start==endNode){
+    if(StartNode==endNode){
 
         addToRight();
         return;
@@ -160,7 +160,7 @@ puts("check your data it`s not in the list");
 
 
 void addMiddleBefore() {
- if(start ==NULL && endNode==NULL){
+ if(StartNode ==NULL && endNode==NULL){
         printTheNodes();
 
         return;
@@ -169,7 +169,7 @@ void addMiddleBefore() {
     puts("which data you are looking for? ");
     scanf("%d",&data);
     //search
-    Nodeptr * current = start;
+    Nodeptr * current = StartNode;
 
     while(current != NULL){
             if(data == current->data){
@@ -193,7 +193,7 @@ void addMiddleBefore() {
         current = current->next;
 
     }
-    if(start==endNode){
+    if(StartNode==endNode){
 
         addToLeft();
         return;
@@ -205,34 +205,34 @@ puts("check your data it`s not in the list");
 
 
 
-void DeleteNodeFromStart(void){
+void DeleteNodeFromStartNode(void){
 
 
-    if( start == endNode)
+    if( StartNode == endNode)
         {
-        free(start);
-        start= NULL;
+        free(StartNode);
+        StartNode= NULL;
         endNode = NULL;
 
         puts("cant delete the node!!");
     }else{
         Nodeptr * temPtr;
-        temPtr = start->next;
+        temPtr = StartNode->next;
         temPtr->previous = NULL;
-        free(start);
-        start = temPtr;
+        free(StartNode);
+        StartNode = temPtr;
         printTheNodes();
         }
 }
 void DeleteAll(){
-start=NULL;
+StartNode=NULL;
 endNode=NULL;
 puts("All Nodes Deleted Successfully");
 
 }
 void DeleteAny(){
 
-    if(start ==NULL && endNode==NULL){
+    if(StartNode ==NULL && endNode==NULL){
         puts("No Nodes Too Delete");
         return;
     }
@@ -242,9 +242,9 @@ void DeleteAny(){
     puts("Which Node You Are Going To Delete?");
     scanf("%d",&data);
     //search
-    Nodeptr * current = start;
+    Nodeptr * current = StartNode;
 
-    if(start == endNode){
+    if(StartNode == endNode){
 
         DeleteAll();
         printTheNodes();
@@ -278,21 +278,51 @@ void DeleteAny(){
 
 }
 printOdd(){
-      Nodeptr * current = start;
+      Nodeptr * current = StartNode;
 
  while(current != NULL){
         if(current->data %2 != 0){
-           printf("%d -->",current->data);;
+           printf("%d -->",current->data);
 
         }
 
 
      current = current->next;
-     if(start==endNode){
+     if(StartNode==endNode){
         return;
      }
  }
 puts("NUll");
+
+}
+ReplaceIt(){
+
+ if(StartNode ==NULL && endNode==NULL){
+        puts("No Nodes Too Delete");
+        return;
+    }
+
+
+    int data;
+    puts("Which data Do you want to replace ? ");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = StartNode;
+
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                puts("type the new Data");
+                scanf("%d",&current->data);
+                 printTheNodes();
+
+                return;
+
+            }
+        current = current->next;
+
+    }
+puts("sorry it does`n exist in the list");
 
 }
 
