@@ -296,13 +296,6 @@ puts("NUll");
 
 }
 ReplaceIt(){
-
- if(StartNode ==NULL && endNode==NULL){
-        puts("No Nodes Too Delete");
-        return;
-    }
-
-
     int data;
     puts("Which data Do you want to replace ? ");
     scanf("%d",&data);
