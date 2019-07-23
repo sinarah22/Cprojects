@@ -3,7 +3,7 @@
 //  project1
 //
 //  Created by Saygin Guven on 2019-07-16.
-//  Copyright Â© 2019 Saygin Guven. All rights reserved.
+//  Copyright © 2019 Saygin Guven. All rights reserved.
 //
 
 #include "myFunctions.h"
@@ -20,6 +20,7 @@ typedef struct Node
 
 Nodeptr * StartNode;
 Nodeptr * endNode;
+int count = 0;
 
 void printTheNodes() {
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
@@ -319,31 +320,29 @@ puts("sorry it does`n exist in the list");
 
 }
 void SortTheList(){
-    Nodeptr * current = StartNode;
-    Nodeptr * secondN = current->next;
-    Nodeptr * temPtr;
-
-    while(current != NULL){
-            for(int i=0;i<7;i++){
-                temPtr = secondN;
-                if(temPtr->data<current->data){
-
-                    secondN->data = current->data;
-                    current->data = temPtr->data;
-
-                }
-                    printTheNodes();
-
-                    //return;
-                    current = current->next;
-
+    Nodeptr * current;
+    current = StartNode;
+    Nodeptr * secondN;
+    int tmp;
+    count=SizeOfN();
+    for(int i=0;i<=count;i++){
+        current = StartNode;
+        for(int j=0;j<count-1;j++){
+            secondN = current->next;
+            if(current->data > secondN->data){
+                tmp = current->data;
+                current->data = secondN->data;
+                secondN->data = tmp;
+            printTheNodes();
+            }
+            current = current->next;
             }
     }
-
-
-}
+    puts("*****************");
+ printTheNodes();
+ }
 int SizeOfN(){
-    int count = 0;
+
     Nodeptr * current = StartNode;
     while(current!=NULL){
         current = current->next;
@@ -351,7 +350,7 @@ int SizeOfN(){
 
 
     }
-    //printf("The size of This ,is : %d \n",count);
+    printf("The size of This ,is : %d \n",count);
     return count;
 }
 
