@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "myFunctions.h"
 typedef struct Node Nodeptr;
 

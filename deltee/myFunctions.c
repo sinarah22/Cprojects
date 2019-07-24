@@ -8,6 +8,7 @@
 
 #include "myFunctions.h"
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct Node Nodeptr;
 
@@ -101,14 +102,16 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
     if(StartNode ==NULL && endNode == NULL){
         StartNode = currentNode;
         endNode = currentNode;
-        printf("what is the data? :");
-        scanf("%d",&currentNode->data);
+        //printf("what is the data? :");
+        //scanf("%d",&currentNode->data);
+        currentNode->data=PrintRandomNumbers();
         currentNode->next = NULL;
         currentNode->previous = NULL;
     }else{
         puts("add one more node");
-        printf("what is the data? :");
-        scanf("%d",&currentNode->data);
+       // printf("what is the data? :");
+        //scanf("%d",&currentNode->data);
+        currentNode->data=PrintRandomNumbers();
         currentNode->previous = endNode;
         currentNode->next = NULL;
         endNode->next =currentNode;
@@ -355,8 +358,14 @@ int SizeOfN(){
     printf("The size of This ,is : %d \n",count);
     return count;
 }
-void PrintRandomNumbers(){
+int PrintRandomNumbers(){
+    //srand to gice numbers but the reason that in printf we use rand is to get numbers we can not get number s by srand
+    srand((signed int)time(NULL));
 
+
+       // printf("%d \n",rand()%10);
+
+        return rand()%100;
 }
 
 void menu() {

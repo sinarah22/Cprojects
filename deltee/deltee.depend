@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1563820257 source:c:\users\sina\desktop\prg\deltee\main.c
+1563987836 source:c:\users\sina\desktop\prg\deltee\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"myFunctions.h"
 
 1563301292 c:\users\sina\desktop\prg\deltee\myfunctions.h
