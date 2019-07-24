@@ -9,6 +9,7 @@
 #include "myFunctions.h"
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 typedef struct Node Nodeptr;
 
@@ -366,6 +367,29 @@ int PrintRandomNumbers(){
        // printf("%d \n",rand()%10);
 
         return rand()%100;
+}
+int PrintPrimeNumbers(long number){
+
+    if(number<2){return 0;}
+    if(number==2){
+    return 1;
+}
+    for(int i=2;i<=sqrt(number);i++){
+        if(number%i==0)
+            return 0;
+
+
+    }
+    return 1;
+}
+void test(){
+    int j=0;
+    for(int i=0;i<1000;i++){
+        if(PrintPrimeNumbers(i)==1){
+            j++;
+            printf("%d prime number is : %d\n",j,i);
+        }
+    }
 }
 
 void menu() {

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "myFunctions.h"
 typedef struct Node Nodeptr;
 
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
     {
 
         printf("1 - add (left) | 2- add (right) | 3 - add Middle After | 4 - add Middle Before |  5 - print | 6 - print backward | 7 - delete node from StartNode | 8 - Delete All | 9 - Delete Any | 11 - Odd Numbers | 12 - Replace A Number | ");
-        puts(" 13 - Sort the list | 15 - Random Numbers | 99 - extend the menu | ");
+        puts(" 13 - Sort the list | 15 - Random Numbers | 16 - Print Prime Numbers | 99 - extend the menu | ");
         scanf("%d", &choice);
 
         switch (choice)
@@ -83,6 +84,10 @@ int main(int argc, char *argv[])
                 break;
             case 15 :
                 PrintRandomNumbers();
+                break;
+            case 16 :
+                PrintPrimeNumbers();
+                test();
                 break;
             default:
                 printf("please enter a valid number\n\n");
