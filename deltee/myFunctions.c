@@ -319,6 +319,7 @@ ReplaceIt(){
 puts("sorry it does`n exist in the list");
 
 }
+//BUbble Sort Funtion is right below
 void SortTheList(){
     Nodeptr * current;
     current = StartNode;
@@ -341,6 +342,7 @@ void SortTheList(){
     puts("*****************");
  printTheNodes();
  }
+ //find the size and count is a global var
 int SizeOfN(){
 
     Nodeptr * current = StartNode;
@@ -352,6 +354,9 @@ int SizeOfN(){
     }
     printf("The size of This ,is : %d \n",count);
     return count;
+}
+void PrintRandomNumbers(){
+
 }
 
 void menu() {
