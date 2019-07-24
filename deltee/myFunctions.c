@@ -384,10 +384,13 @@ int PrintPrimeNumbers(long number){
 }
 void test(){
     int j=0;
-    for(int i=0;i<1000;i++){
+    for(int i=0;j<10002;i++){
+
         if(PrintPrimeNumbers(i)==1){
             j++;
+    if(j>10000 && j<10002){
             printf("%d prime number is : %d\n",j,i);
+        }
         }
     }
 }
