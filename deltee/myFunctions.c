@@ -389,7 +389,10 @@ void test(){
         if(PrintPrimeNumbers(i)==1){
             j++;
     if(j>10000 && j<10002){
-            printf("%d prime number is : %d\n",j,i);
+            printf("%d th prime number is : %d\n",j,i);
+            puts("");
+            puts("_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|");
+            puts("");
         }
         }
     }
