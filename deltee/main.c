@@ -92,6 +92,9 @@ int main(int argc, char *argv[])
             case 17 :
                 HowMany();
                 break;
+            case 18 :
+                RemoveDuplicate();
+                break;
             default:
                 printf("please enter a valid number\n\n");
                 break;

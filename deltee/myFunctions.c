@@ -394,7 +394,7 @@ void test(){
 }
 void HowMany(){
     int data;
-    puts("Which Node You Are Going To Delete?");
+    puts("How many of What Node?<Enter the Node To See : ");
     scanf("%d",&data);
     //search
     Nodeptr * current = StartNode;
@@ -414,6 +414,33 @@ void HowMany(){
         puts("Number not found");
     }
 }
+void RemoveDuplicate(){
+int data;
+    puts("Which Node You Are Going To Remove the Duplicate?");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = StartNode;
+
+
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                current = NULL;
+
+                free(current);
+                count++;
+                return;
+          }
+
+
+          current = current->next;
+    }
+
+
+
+
+}
+
 
 void menu() {
     puts("");
