@@ -408,9 +408,11 @@ void HowMany(){
                 //return;
           }
           current = current->next;
-
     }
     printf("there is %d , %d in this Link List \n",count,data);
+    if(count==0){
+        puts("Number not found");
+    }
 }
 
 void menu() {
