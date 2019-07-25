@@ -263,10 +263,12 @@ void DeleteAny(){
                     printTheNodes();
                     break;
                 }
-                current = NULL;
-
+                Nodeptr * currentNext = current->next;
+                Nodeptr * currentPre = current->previous;
+                currentNext->previous=currentPre;
+                currentPre->next=currentNext;
                 free(current);
-
+                printTheNodes();
 
                 return;
 
