@@ -36,27 +36,27 @@ int main(int argc, char *argv[])
                 menu();
                 break;
             case 1:
-                puts("under construction");
+
                 addToLeft();
                 break;
             case 2:
-                puts("under construction");
+
                 addToRight();
                 break;
             case 3:
-                puts("under construction");
+
                 addMiddleAfter();
                 break;
             case 4:
-                puts("under construction");
+
                 addMiddleBefore();
                 break;
             case 5:
-                puts("under construction");
+
                 printTheNodes();
                 break;
             case 6:
-                puts("under construction");
+
                 printTheNodesBackwards();
                 break;
             case 0:
@@ -88,6 +88,9 @@ int main(int argc, char *argv[])
             case 16 :
                 PrintPrimeNumbers();
                 test();
+                break;
+            case 17 :
+                HowMany();
                 break;
             default:
                 printf("please enter a valid number\n\n");

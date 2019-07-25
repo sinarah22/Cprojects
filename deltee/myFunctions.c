@@ -90,11 +90,6 @@ void addToLeft() {
     }
 
 
-
-
-
-
-
 }
 
 void addToRight(){
@@ -103,16 +98,16 @@ Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
     if(StartNode ==NULL && endNode == NULL){
         StartNode = currentNode;
         endNode = currentNode;
-        //printf("what is the data? :");
-        //scanf("%d",&currentNode->data);
-        currentNode->data=PrintRandomNumbers();
+        printf("what is the data? :");
+        scanf("%d",&currentNode->data);
+       // currentNode->data=PrintRandomNumbers();
         currentNode->next = NULL;
         currentNode->previous = NULL;
     }else{
         puts("add one more node");
-       // printf("what is the data? :");
-        //scanf("%d",&currentNode->data);
-        currentNode->data=PrintRandomNumbers();
+        printf("what is the data? :");
+        scanf("%d",&currentNode->data);
+       // currentNode->data=PrintRandomNumbers();
         currentNode->previous = endNode;
         currentNode->next = NULL;
         endNode->next =currentNode;
@@ -361,12 +356,12 @@ int SizeOfN(){
 }
 int PrintRandomNumbers(){
     //srand to gice numbers but the reason that in printf we use rand is to get numbers we can not get number s by srand
-    srand((signed int)time(NULL));
+  //  srand((signed int)time(NULL));
 
 
        // printf("%d \n",rand()%10);
 
-        return rand()%100;
+  //     return rand()%100;
 }
 int PrintPrimeNumbers(long number){
 
@@ -388,14 +383,34 @@ void test(){
 
         if(PrintPrimeNumbers(i)==1){
             j++;
-    if(j>10000 && j<10002){
-            printf("%d th prime number is : %d\n",j,i);
-            puts("");
-            puts("_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|");
-            puts("");
-        }
+            if(j>10000 && j<10002){
+                printf("%d th prime number is : %d\n",j,i);
+                puts("");
+                puts("_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|");
+                puts("");
+            }
         }
     }
+}
+void HowMany(){
+    int data;
+    puts("Which Node You Are Going To Delete?");
+    scanf("%d",&data);
+    //search
+    Nodeptr * current = StartNode;
+
+
+    while(current != NULL){
+            if(data == current->data){
+                //found it!
+                puts("Number found");
+                count++;
+                //return;
+          }
+          current = current->next;
+
+    }
+    printf("there is %d , %d in this Link List \n",count,data);
 }
 
 void menu() {
